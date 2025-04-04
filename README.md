@@ -18,7 +18,6 @@ It includes fast native implementations of many sequential recombination
 clustering algorithms, plugins for access to a range of cone jet finders
 and tools for advanced jet manipulation.
 
-
 Current build status
 ====================
 
