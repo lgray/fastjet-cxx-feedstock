@@ -55,7 +55,7 @@ outputs:
           include:
             - fastjet/*.h
             - fastjet/*.hh
-            - fastjet/internal/*.hh}
+            - fastjet/internal/*.hh
             - fastjet/tools/*.hh
           lib:
             - fastjet
