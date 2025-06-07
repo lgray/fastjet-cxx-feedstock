@@ -14,7 +14,7 @@ source:
   patches: enable-python-binding-only-build.patch
 
 build:
-  number: 2
+  number: 3
   skip: win
 
 outputs:
@@ -51,15 +51,19 @@ outputs:
         - siscone
 
     tests:
+      - package_contents:
+          include:
+            - fastjet/*.h
+            - fastjet/*.hh
+            - fastjet/internal/*.hh
+            - fastjet/tools/*.hh
+          lib:
+            - fastjet
+            - fastjetplugins
+            - fastjettools
+          bin:
+            - fastjet-config
       - script:
-          - test -f $PREFIX/bin/fastjet-config
-          - test -f $PREFIX/lib/libfastjet${SHLIB_EXT}
-          - test -f $PREFIX/lib/libfastjetplugins${SHLIB_EXT}
-          - test -f $PREFIX/lib/libfastjettools${SHLIB_EXT}
-          - test -d $PREFIX/include/fastjet
-          - test -d $PREFIX/include/fastjet/internal
-          - test -d $PREFIX/include/fastjet/tools
-
           - fastjet-config --help
           - fastjet-config --version
           - fastjet-config --prefix
