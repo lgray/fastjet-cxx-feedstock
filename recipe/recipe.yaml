@@ -52,17 +52,17 @@ outputs:
 
     tests:
       - package_contents:
-        include:
-          - fastjet/*.h
-          - fastjet/*.hh
-          - fastjet/internal/*.hh}
-          - fastjet/tools/*.hh
-        lib:
-          - fastjet
-          - fastjetplugins
-          - fastjettools
-        bin:
-          - fastjet-config
+          include:
+            - fastjet/*.h
+            - fastjet/*.hh
+            - fastjet/internal/*.hh}
+            - fastjet/tools/*.hh
+          lib:
+            - fastjet
+            - fastjetplugins
+            - fastjettools
+          bin:
+            - fastjet-config
       - script:
           - fastjet-config --help
           - fastjet-config --version
