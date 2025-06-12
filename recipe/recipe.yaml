@@ -184,7 +184,7 @@ outputs:
       - package_contents:
           files:
             - lib/python*/site-packages/fastjet_cxx/_fastjet_swig*
-          site-packages:
+          site_packages:
             - fastjet_cxx
       - script:
           - fastjet-config --help
