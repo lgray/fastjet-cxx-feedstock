@@ -14,7 +14,7 @@ source:
   patches: enable-python-binding-only-build.patch
 
 build:
-  number: 3
+  number: 4
   skip: win
 
 outputs:
@@ -73,7 +73,9 @@ outputs:
           - fastjet-config --libs --plugins
           - fastjet-config --config
 
-          - cd example/
+          - curl -sL https://gitlab.com/fastjet/fastjet/-/archive/fastjet-${{ version }}/fastjet-fastjet-${{ version }}.tar.gz | tar -xz
+
+          - cd fastjet-fastjet-${{ version }}/example/
           - $CXX fastjet_example.cc -o fastjet_example $CXXFLAGS $LDFLAGS -lfastjet
           - ./fastjet_example < data/single-event.dat
           - $CXX fastjet_areas.cc -o fastjet_areas $CXXFLAGS $LDFLAGS -lfastjet
@@ -128,15 +130,12 @@ outputs:
             - example/12-boosted_higgs.cc
             - example/13-boosted_top.cc
             - example/14-groomers.cc
-            - example/data/single-event.dat
-            - example/data/single-ee-event.dat
-            - example/data/Pythia-Zp2jets-lhc-pileup-1ev.dat
-            - example/data/Pythia-dijet-ptmin100-lhc-pileup-1ev.dat
-            - example/data/HZ-event-Hmass115.dat
-            - example/data/boosted_top_event.dat
+
         requirements:
           run:
             - ${{ compiler('cxx') }}
+            - curl
+            - tar
 
   - package:
       name: ${{ name }}-python
