@@ -14,7 +14,7 @@ source:
   patches: enable-python-binding-only-build.patch
 
 build:
-  number: 3
+  number: 4
   skip: win
 
 outputs:
@@ -52,6 +52,8 @@ outputs:
 
     tests:
       - package_contents:
+          files:
+            - lib/cmake/fastjet/fastjet*.cmake
           include:
             - fastjet/*.h
             - fastjet/*.hh
@@ -179,6 +181,11 @@ outputs:
             - fastjet_cxx
           pip_check: true
           python_version: ${{ python }}
+      - package_contents:
+          files:
+            - lib/python*/site-packages/fastjet_cxx/_fastjet_swig*
+          site-packages:
+            - fastjet_cxx
       - script:
           - fastjet-config --help
           - fastjet-config --version
