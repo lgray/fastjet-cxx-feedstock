@@ -57,24 +57,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_ppc64le_microarch_level10</td>
+              <td>linux_ppc64le</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24351&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_ppc64le_microarch_level10" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_ppc64le_microarch_level8</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24351&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_ppc64le_microarch_level8" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_ppc64le_microarch_level9</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24351&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_ppc64le_microarch_level9" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
                 </a>
               </td>
             </tr><tr>
