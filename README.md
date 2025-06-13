@@ -36,10 +36,17 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
+              <td>linux_64_x86_64_microarch_level1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24351&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_x86_64_microarch_level1" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_x86_64_microarch_level3</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24351&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_x86_64_microarch_level3" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -50,17 +57,38 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le</td>
+              <td>linux_ppc64le_ppc64le_microarch_level10</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24351&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_ppc64le_microarch_level10" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64</td>
+              <td>linux_ppc64le_ppc64le_microarch_level8</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24351&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_ppc64le_microarch_level8" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_ppc64le_microarch_level9</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24351&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_ppc64le_microarch_level9" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_x86_64_microarch_level1</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24351&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_x86_64_microarch_level1" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_x86_64_microarch_level3</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24351&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fastjet-cxx-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_x86_64_microarch_level3" alt="variant">
                 </a>
               </td>
             </tr><tr>
