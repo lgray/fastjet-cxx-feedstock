@@ -162,7 +162,7 @@ outputs:
         - cmake
         - if: unix
           then: make
-        - cgal
+        - cgal-cpp
         - if: build_platform != target_platform
           then:
             - python
