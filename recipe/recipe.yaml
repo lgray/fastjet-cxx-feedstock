@@ -14,7 +14,7 @@ source:
   patches: enable-python-binding-only-build.patch
 
 build:
-  number: 4
+  number: 5
   skip: win
 
 outputs:
@@ -37,7 +37,7 @@ outputs:
         - cmake
         - if: unix
           then: make
-        - cgal
+        - cgal-cpp
         - if: build_platform != target_platform
           then:
             - gmp
