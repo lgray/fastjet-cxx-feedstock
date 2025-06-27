@@ -140,6 +140,7 @@ outputs:
       name: ${{ name }}-python
 
     build:
+      skip: win and arm64
       # clobber existing fastjet-config from fastjet-cxx
       # c.f. https://rattler.build/latest/build_options/#always-include-and-always-copy-files
       always_include_files:
