@@ -166,6 +166,8 @@ outputs:
       host:
         - python
         - fastjet-cxx
+      run:
+        - python
 
     tests:
       - python:
