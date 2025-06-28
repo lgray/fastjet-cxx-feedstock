@@ -43,8 +43,6 @@ outputs:
             - siscone
       host:
         - siscone
-      run:
-        - siscone
 
     tests:
       - package_contents:
@@ -166,9 +164,6 @@ outputs:
             - cross-python_${{ target_platform }}
             - fastjet-cxx
       host:
-        - python
-        - fastjet-cxx
-      run:
         - python
         - fastjet-cxx
 
