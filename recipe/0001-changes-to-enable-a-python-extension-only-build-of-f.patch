@@ -1,19 +1,19 @@
-From 4963159eda7d2059d72c6dbba25e9a259c515d8e Mon Sep 17 00:00:00 2001
+From 4d30f74583d357d131aba6cc23a31bb03d2b6c0c Mon Sep 17 00:00:00 2001
 From: Lindsey Gray <lindsey.gray@gmail.com>
 Date: Wed, 18 Jun 2025 10:29:23 -0500
 Subject: [PATCH 1/2] changes to enable a python-extension-only build of
  fastjet
 
 ---
- CMakeLists.txt             | 90 +++++++++++++++++++++-----------------
+ CMakeLists.txt             | 92 ++++++++++++++++++++++----------------
  pyinterface/CMakeLists.txt |  4 +-
- 2 files changed, 53 insertions(+), 41 deletions(-)
+ 2 files changed, 55 insertions(+), 41 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index c76900ec..7ace2535 100644
+index ed194c68..b8058c1e 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -191,6 +191,7 @@ option(FASTJET_HAVE_EXPLICIT_FOR_OPERATORS  "Compiler supports explicit operator
+@@ -188,6 +188,7 @@ option(FASTJET_HAVE_EXPLICIT_FOR_OPERATORS  "Compiler supports explicit operator
  
  # support for swig-based python bindings
  option(FASTJET_ENABLE_PYTHON "Enable building of swig-based fastjet python bindings" OFF)
@@ -21,7 +21,7 @@ index c76900ec..7ace2535 100644
  
  #-------------------------------------------------------------------------
  # compile-time options
-@@ -349,19 +350,29 @@ set(CONFIG_SUMMARY "FastJet configuration summary:
+@@ -336,19 +337,29 @@ set(CONFIG_SUMMARY "FastJet configuration summary:
  
  #-------------------------------------------------------------------------
  # get into directories:
@@ -56,22 +56,24 @@ index c76900ec..7ace2535 100644
  
  
  # generate the configure file
-@@ -391,49 +402,50 @@ install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/fastjet-config DESTINATION ${CMAKE_
+@@ -376,49 +387,52 @@ configure_file(fastjet-config.in fastjet-config)
+ install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/fastjet-config DESTINATION ${CMAKE_INSTALL_BINDIR})
  
- #--------------------------------------------------------------------------
- # enable testing functionality
+ 
+-#--------------------------------------------------------------------------
+-# enable testing functionality
 -enable_testing()
--if (UNIX OR (WIN32 AND MINGW))
--  add_test(
--    NAME test_compare
--    COMMAND ${PROJECT_SOURCE_DIR}/test-compare.sh
--  )
--endif()
+-add_test(
+-  NAME test_compare
+-  COMMAND ${PROJECT_SOURCE_DIR}/test-compare.sh
+-)
 -
 -#--------------------------------------------------------------------------
 -# for accessing fastjet from other CMake projects
 -include(CMakePackageConfigHelpers)
 +if(NOT FASTJET_PYINTERFACE_ONLY)
++  #--------------------------------------------------------------------------
++  # enable testing functionality
 +  enable_testing()
 +  if (UNIX OR (WIN32 AND MINGW))
 +    add_test(
@@ -142,12 +144,12 @@ index c76900ec..7ace2535 100644
  message(STATUS "${CONFIG_SUMMARY}")
  
 diff --git a/pyinterface/CMakeLists.txt b/pyinterface/CMakeLists.txt
-index bf9c0f83..e97b4b58 100644
+index 7016f179..fb61ee56 100644
 --- a/pyinterface/CMakeLists.txt
 +++ b/pyinterface/CMakeLists.txt
-@@ -32,8 +32,8 @@ else()
-   set_property(TARGET fastjet_swig PROPERTY SUFFIX ".${Python_SOABI}${CMAKE_SHARED_MODULE_SUFFIX}")
- endif()
+@@ -29,8 +29,8 @@ endif()
+ # Unix only, Windows is different
+ set_property(TARGET fastjet_swig PROPERTY SUFFIX ".${Python_SOABI}${CMAKE_SHARED_MODULE_SUFFIX}")
  
 -target_link_libraries(fastjet_swig PUBLIC fastjet)
 -target_link_libraries(fastjet_swig PUBLIC fastjettools)
