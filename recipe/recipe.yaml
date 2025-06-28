@@ -191,7 +191,6 @@ outputs:
           - fastjet-config --config
           - fastjet-config --pythonpath
 
-          - ls $PREFIX/lib/python*/site-packages
           - python -c "import fastjet_cxx as fj; jetdef=fj.JetDefinition(fj.antikt_algorithm, 0.4); jets=jetdef([fj.PtYPhiM(100.0, 0.1, 0.1),fj.PtYPhiM(100.0, 0.2, 0.2)]); print(jets[0])"
 
 about:
