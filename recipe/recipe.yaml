@@ -1,6 +1,7 @@
 context:
   name: "fastjet-cxx"
   version: "3.5.1"
+  siscone_version: "3.1.2"
   win_cgal: ${{ "OFF" if win and arm64 else "ON" }}
 
 recipe:
@@ -45,7 +46,7 @@ outputs:
         - if: not (win and arm64)
           then: cgal-cpp
         # check for siscone version changes when fastjet is updated!
-        - siscone ==3.1.2
+        - siscone ==${{ siscone_version }}
 
     tests:
       - package_contents:
