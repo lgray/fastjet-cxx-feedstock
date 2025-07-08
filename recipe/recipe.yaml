@@ -44,7 +44,8 @@ outputs:
       host:
         - if: not (win and arm64)
           then: cgal-cpp
-        - siscone
+        # check for siscone version changes when fastjet is updated!
+        - siscone ==3.1.2
 
     tests:
       - package_contents:
@@ -221,12 +222,11 @@ outputs:
           then:
             - python
             - cross-python_${{ target_platform }}
-            - fastjet-cxx
       host:
         - python
         - if: not (win and arm64)
           then: cgal-cpp
-        - fastjet-cxx
+        - fastjet-cxx ==${{ version }}
       run:
         - python
 
