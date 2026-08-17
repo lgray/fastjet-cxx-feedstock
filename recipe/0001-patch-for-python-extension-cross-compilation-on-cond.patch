@@ -4,14 +4,14 @@ Date: Mon, 30 Jun 2025 13:12:40 -0500
 Subject: [PATCH] patch for python extension cross-compilation on conda
 
 ---
- pyinterface/CMakeLists.txt | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
+ pyinterface/CMakeLists.txt | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
 
 diff --git a/pyinterface/CMakeLists.txt b/pyinterface/CMakeLists.txt
-index e97b4b58..16997460 100644
+index e97b4b5..b9fa489 100644
 --- a/pyinterface/CMakeLists.txt
 +++ b/pyinterface/CMakeLists.txt
-@@ -9,7 +9,14 @@ else()
+@@ -9,7 +9,19 @@ else()
    set(DEV_MODULE Development.Module)
  endif()
  
@@ -19,6 +19,11 @@ index e97b4b58..16997460 100644
 +if(NOT WIN32)
 +  set(CFRPMP_TEMP "${CMAKE_FIND_ROOT_PATH_MODE_PROGRAM}")
 +  set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM ONLY)
++  # Interpreter is omitted below so that cross-compilation works, but it is also what
++  # tells FindPython the interpreter's ABI, and the free-threading element of
++  # Python_FIND_ABI defaults to OFF. Search every ABI so that free-threaded builds
++  # find include/pythonX.Yt and pythonX.Yt-config.
++  set(Python_FIND_ABI "ANY;ANY;ANY;ANY")
 +  find_package(Python 3.8 COMPONENTS ${DEV_MODULE} REQUIRED)
 +  set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM "${CFRPMP_TEMP}")
 +else()
