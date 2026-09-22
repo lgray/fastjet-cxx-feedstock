@@ -9,7 +9,7 @@ version = "2026.9.22"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/fastjet-cxx-feedstock"
 authors = ["@conda-forge/fastjet-cxx"]
 channels = ["conda-forge"]
-platforms = ["linux-64", "linux-aarch64", "linux-ppc64le", "osx-64", "osx-arm64", "win-64"]
+platforms = ["linux-64", "linux-aarch64", "linux-ppc64le", "osx-64", "osx-arm64", "win-64", "win-arm64"]
 requires-pixi = ">=0.59.0"
 
 [tasks.build-locally]
@@ -145,6 +145,24 @@ description = "Debug fastjet-cxx-feedstock with variant win_64_channel_sourcesco
 [feature.build.tasks."inspect-win_64_channel_sourcesconda-forgeconda-forgelabelpython_rc"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_channel_sourcesconda-forgeconda-forgelabelpython_rc.yaml"
 description = "List contents of fastjet-cxx-feedstock packages built for variant win_64_channel_sourcesconda-forgeconda-forgelabelpython_rc"
+[feature.build.tasks."build-win_arm64_channel_sourcesconda-forge"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_arm64_channel_sourcesconda-forge.yaml --target-platform win-arm64"
+description = "Build fastjet-cxx-feedstock with variant win_arm64_channel_sourcesconda-forge directly (without setup scripts)"
+[feature.build.tasks."debug-win_arm64_channel_sourcesconda-forge"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_arm64_channel_sourcesconda-forge.yaml --target-platform win-arm64"
+description = "Debug fastjet-cxx-feedstock with variant win_arm64_channel_sourcesconda-forge directly (without setup scripts)"
+[feature.build.tasks."inspect-win_arm64_channel_sourcesconda-forge"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_arm64_channel_sourcesconda-forge.yaml"
+description = "List contents of fastjet-cxx-feedstock packages built for variant win_arm64_channel_sourcesconda-forge"
+[feature.build.tasks."build-win_arm64_channel_sourcesconda-forgeconda-forgelabelpython_rc"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_arm64_channel_sourcesconda-forgeconda-forgelabelpython_rc.yaml --target-platform win-arm64"
+description = "Build fastjet-cxx-feedstock with variant win_arm64_channel_sourcesconda-forgeconda-forgelabelpython_rc directly (without setup scripts)"
+[feature.build.tasks."debug-win_arm64_channel_sourcesconda-forgeconda-forgelabelpython_rc"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_arm64_channel_sourcesconda-forgeconda-forgelabelpython_rc.yaml --target-platform win-arm64"
+description = "Debug fastjet-cxx-feedstock with variant win_arm64_channel_sourcesconda-forgeconda-forgelabelpython_rc directly (without setup scripts)"
+[feature.build.tasks."inspect-win_arm64_channel_sourcesconda-forgeconda-forgelabelpython_rc"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_arm64_channel_sourcesconda-forgeconda-forgelabelpython_rc.yaml"
+description = "List contents of fastjet-cxx-feedstock packages built for variant win_arm64_channel_sourcesconda-forgeconda-forgelabelpython_rc"
 
 [environments]
 build = ["build"]
