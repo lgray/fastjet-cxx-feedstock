@@ -14,7 +14,6 @@ source:
   sha256: b04d8431656f8dad0a555fb90e999b0d99b2071881114508997a1ee9b58c7b90
   patches:
     - 0001-patch-for-python-extension-cross-compilation-on-cond.patch
-    - 0002-Forward-CMake-BUILD_SHARED_LIBS-as-HAS_SHARED-to-fastjet-config.patch
     - 0003-fastjet-config-locate-installed-fastjet_cxx-for-pythonpath.patch
 
 build:
